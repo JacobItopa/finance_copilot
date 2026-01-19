@@ -1,0 +1,16 @@
+date,description,amount,direction,currency
+2025-11-01,Stripe payout,450000,credit,NGN
+2025-11-02,Office rent payment,200000,debit,NGN
+2025-11-03,Google Workspace subscription,25000,debit,NGN
+2025-11-04,Facebook Ads,120000,debit,NGN
+2025-11-05,Salary payment - John,180000,debit,NGN
+2025-11-06,Salary payment - Mary,180000,debit,NGN
+2025-11-07,Canva subscription,15000,debit,NGN
+2025-11-08,Client refund,50000,debit,NGN
+2025-11-10,Stripe payout,600000,credit,NGN
+2025-11-12,Internet service provider,30000,debit,NGN
+2025-11-14,Consultant fee,100000,debit,NGN
+2025-11-18,Flutterwave payout,350000,credit,NGN
+2025-11-20,LinkedIn Ads,90000,debit,NGN
+2025-11-22,Office supplies,45000,debit,NGN
+2025-11-25,Unknown charge XYZ LTD,60000,debit,NGN
