@@ -10,3 +10,7 @@ class Transaction(BaseModel):
     amount: float
     direction: Literal["credit", "debit"]
     currency: str
+
+    category: Optional[str] = None
+    confidence: Optional[float] = None
+    classified_by: Optional[Literal["rules", "llm"]] = None

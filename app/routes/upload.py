@@ -1,4 +1,5 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException
+from app.services.classifier import classify_transaction
 import os
 from app.services.parser import parse_csv
 
@@ -22,9 +23,13 @@ async def upload_file(file: UploadFile = File(...)):
         transactions = parse_csv(file_path)
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
+    classified_transactions = [
+        classify_transaction(tx) for tx in transactions
+    ]
 
     return {
-        "message": "File uploaded and parsed successfully",
-        "transaction_count": len(transactions),
-        "sample_transaction": transactions[0]
+        "message": "File uploaded and categorized successfully",
+        "transaction_count": len(classified_transactions),
+        "sample_transaction": classified_transactions[0]
     }
+
