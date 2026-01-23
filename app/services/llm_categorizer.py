@@ -16,17 +16,18 @@ CATEGORIES = [
 ]
 
 
-def llm_categorize(description: str):
+def llm_categorize(description: str, context: str):
     prompt = f"""
 You are a financial assistant for SMEs.
 
-Transaction description:
+Recent company transaction history:
+{context}
+
+New transaction:
 "{description}"
 
-Choose the most appropriate category from this list:
-{", ".join(CATEGORIES)}
-
-Return ONLY the category name.
+Choose the most appropriate category.
+Return ONLY the category.
 """
 
     response = client.chat.completions.create(
@@ -35,10 +36,9 @@ Return ONLY the category name.
         temperature=0
     )
 
-    category = response.choices[0].message.content.strip()
-
     return {
-        "category": category,
-        "confidence": 0.7,
-        "classified_by": "llm"
+        "category": response.choices[0].message.content.strip(),
+        "confidence": 0.75,
+        "classified_by": "llm_rag"
     }
+

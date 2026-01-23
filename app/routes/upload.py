@@ -2,6 +2,8 @@ from fastapi import APIRouter, UploadFile, File, HTTPException
 from app.services.classifier import classify_transaction
 import os
 from app.services.parser import parse_csv
+from app.services.storage import save_transactions
+
 
 router = APIRouter(prefix="/upload", tags=["Upload"])
 
@@ -26,6 +28,8 @@ async def upload_file(file: UploadFile = File(...)):
     classified_transactions = [
         classify_transaction(tx) for tx in transactions
     ]
+
+    save_transactions(classified_transactions)
 
     return {
         "message": "File uploaded and categorized successfully",
