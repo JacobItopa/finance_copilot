@@ -9,7 +9,8 @@ A tailored financial assistant for Small and Medium Enterprises (SMEs) to automa
 - **Financial Summary**: Generates a financial summary including Total Income, Total Expense, and Net Cash Flow.
 - **Actionable Insights**:
     - **Anomaly Detection**: Flags transactions that deviate significantly from category averages.
-    - **Cash Runway**: Estimates how long the business can survive based on current burn rate.
+    - **Cash Runway**: Estimates how long the business can survive based on critical burn rate.
+- **Smart Recommendations**: translates financial insights into clear, actionable advice (e.g., "Reduce discretionary spending").
 - **Database Storage**: Stores all transactions in a SQLite database.
 
 ## Setup
@@ -45,6 +46,7 @@ A tailored financial assistant for Small and Medium Enterprises (SMEs) to automa
 - `POST /upload/`: Upload a CSV file for processing.
 - `GET /summary/`: Get the financial summary of all transactions.
 - `GET /insights/`: Get AI-generated financial insights (anomalies, cash runway).
+- `GET /recommendations/`: Get prioritized, actionable financial recommendations.
 
 ## Tech Stack
 - **Backend**: FastAPI
