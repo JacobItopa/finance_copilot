@@ -11,6 +11,8 @@ A tailored financial assistant for Small and Medium Enterprises (SMEs) to automa
     - **Anomaly Detection**: Flags transactions that deviate significantly from category averages.
     - **Cash Runway**: Estimates how long the business can survive based on critical burn rate.
 - **Smart Recommendations**: translates financial insights into clear, actionable advice (e.g., "Reduce discretionary spending").
+- **Daily Digest**: Aggregates insights, key metrics, and alerts into a daily report.
+- **Email Notifications**: Sends daily financial digests via email using Resend.
 - **Database Storage**: Stores all transactions in a SQLite database.
 
 ## Setup
@@ -30,6 +32,8 @@ A tailored financial assistant for Small and Medium Enterprises (SMEs) to automa
     Create a `.env` file in the root directory and add your OpenAI API Key:
     ```
     OPENAI_API_KEY=your_api_key_here
+    RESEND_API_KEY=your_resend_api_key
+    SENDER_EMAIL=your_verified_sender_email
     ```
 
 4.  **Initialize Database**:
@@ -47,6 +51,8 @@ A tailored financial assistant for Small and Medium Enterprises (SMEs) to automa
 - `GET /summary/`: Get the financial summary of all transactions.
 - `GET /insights/`: Get AI-generated financial insights (anomalies, cash runway).
 - `GET /recommendations/`: Get prioritized, actionable financial recommendations.
+- `GET /digest/`: Get a daily financial digest including metrics and alerts.
+- `POST /email-digest/`: Trigger a daily digest email to a specified recipient (Query param: `email`).
 
 ## Tech Stack
 - **Backend**: FastAPI
