@@ -13,6 +13,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: "sk-dummy-key"
+      RESEND_API_KEY: "re-dummy-key"
+      SENDER_EMAIL: "test@example.com"
     strategy:
       matrix:
         python-version: ["3.10", "3.11", "3.12"]
