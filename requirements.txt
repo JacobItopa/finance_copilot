@@ -6,3 +6,7 @@ pydantic
 openai
 python-dotenv
 resend
+pytest
+httpx
+pytest-mock
+SQLAlchemy
