@@ -9,3 +9,4 @@ resend
 pytest
 httpx
 pytest-mock
+SQLAlchemy
